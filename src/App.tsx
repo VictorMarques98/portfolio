@@ -1,8 +1,11 @@
+import { AppRoutes } from "./routes"
+import { AppProvider } from "./providers/app"
+
 function App() {
   return (
-    <>
-      <h1>Hello, world!</h1>
-    </>
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
   )
 }
 
