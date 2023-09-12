@@ -10,8 +10,11 @@
 }
 
 .item {
-  border-right: 1px solid $color-line;
   border-bottom: 1px solid $color-line;
+
+  &:not(:last-child) {
+    border-right: 1px solid $color-line;
+  }
 
   &:first-child {
     flex: 0.4;
@@ -98,12 +101,15 @@
   }
 
   .item {
-    border-right: 0;
+    &:not(:last-child) {
+      border-right: 0;
+    }
   }
 
   .link {
     font-size: $font-size-xs;
     padding: $space-xs $space-md;
+    min-width: auto;
   }
 
   .mobileMenu {
