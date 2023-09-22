@@ -1,0 +1,35 @@
+@use '/src/styles/main.scss' as *;
+
+.container,
+.numberLines,
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex-direction: row;
+  padding: $space-sm;
+  max-height: calc(100% - 4.375rem);
+  overflow: auto;
+}
+
+.numberLines {
+  min-width: $space-xxxxl;
+
+  & span {
+    text-align: center;
+    color: $color-secondary-100;
+    font-size: $font-size-xs;
+  }
+}
+
+.content {
+  color: $color-secondary-500;
+  font-size: $font-size-xs;
+  gap: 1.14rem;
+}
+
+.tag {
+  color: $color-tag-console;
+}
