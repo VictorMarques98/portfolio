@@ -2,34 +2,34 @@ import styles from './styles.module.scss'
 
 export const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <ul className={styles.list}>
-        <li className={styles.item}>
-          <span className={styles.span}>
+    <footer>
+      <ul className={styles.socialList}>
+        <li className={styles.socialItem}>
+          <span className={styles.infoText}>
             find me in:
           </span>
         </li>
-        <li className={styles.item}>
+        <li className={styles.socialItem}>
           <a
             href="/"
-            className={styles.link}
+            className={styles.socialLink}
           >
             <i className="ri-facebook-fill" />
           </a>
         </li>
-        <li className={styles.item}>
+        <li className={styles.socialItem}>
           <a
             href="/"
-            className={styles.link}
+            className={styles.socialLink}
           >
             <i className="ri-twitter-fill" />
           </a>
         </li>
-        <li className={styles.item}/>
-        <li className={styles.item}>
+        <li className={styles.socialItem}/>
+        <li className={styles.socialItem}>
           <a
             href="/"
-            className={styles.link}
+            className={styles.socialLink}
           >
             <span>@username </span>
             <i className="ri-github-fill" />

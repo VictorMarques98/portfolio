@@ -1,17 +1,17 @@
 @use '/src/styles/main.scss' as *;
 
-.list {
+.socialList {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid $color-line;
-  height: 42px;
+  height: $space-xxl;
 
   & > li:nth-child(4) {
     flex: 1;
   }
 }
 
-.item {
+.socialItem {
   margin: auto;
   height: 100%;
 
@@ -20,8 +20,8 @@
   }
 }
 
-.span,
-.link {
+.infoText,
+.socialLink {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,7 +32,7 @@
   gap: $space-xxxxs;
 }
 
-.link {
+.socialLink {
   transition: all 0.2s ease-in-out;
 
   & i {
@@ -50,31 +50,35 @@
   }
 }
 
+@include breakpoint(xxxxl) {
+  .socialList {
+    height: $space-xl;
+  }
+}
+
 @include breakpoint(lg) {
-  .list {
-    height: 50px;
+  .socialList {
+    height: 3.125rem;
 
     & > li:nth-child(4) {
       display: none;
     }
   }
 
-  .item {
-    &:nth-child(1) {
-      flex: 1;
-    }
+  .socialItem:nth-child(1) {
+    flex: 1;
   }
 
-  .link,
-  .span {
+  .socialLink,
+  .infoText {
     font-size: $font-size-xs;
   }
 
-  .span {
+  .infoText {
     justify-content: flex-start;
   }
 
-  .link {
+  .socialLink {
     & > span {
       display: none;
     }
@@ -86,7 +90,20 @@
 }
 
 @include breakpoint(xs) {
-  .list {
+  .socialList {
     height: max-content;
+  }
+}
+
+@include breakpoint(xs) {
+  .socialItem {
+    &,
+    & > * {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      display: none;
+    }
   }
 }
