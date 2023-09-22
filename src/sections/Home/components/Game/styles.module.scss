@@ -1,0 +1,57 @@
+@use '/src/styles/main.scss' as *;
+
+.console {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: $space-xxs;
+  position: relative;
+  background: linear-gradient(180deg, #237b6d, rgba(67, 217, 173, 0.13));
+  border: 1px solid #000;
+  height: 475px;
+  padding: 30px;
+  width: 530px;
+}
+
+.corner {
+  position: absolute;
+  width: $space-xxs;
+  height: $space-xxs;
+  border-radius: .375rem;
+  background: radial-gradient(
+    73.08% 73.08% at 50% 26.92%,
+    #217d7a 15.1%,
+    #114b4a 100%
+  );
+  box-shadow: 2px 2px 4px #0d4341, inset 0px 1px 2px #1f8177;
+  border: 1px solid #114944;
+  opacity: 0.5;
+
+  &:nth-child(1) {
+    top: .625rem;
+    left: .625rem;
+  }
+
+  &:nth-child(2) {
+    top: .625rem;
+    right: .625rem;
+  }
+
+  &:nth-child(3) {
+    bottom: .625rem;
+    right: .625rem;
+  }
+
+  &:nth-child(4) {
+    bottom: .625rem;
+    left: .625rem;
+  }
+}
+
+@include breakpoint(xxxxl) {
+  .console {
+    height: 370px;
+    padding: 24px;
+    width: 420px;
+  }
+}
