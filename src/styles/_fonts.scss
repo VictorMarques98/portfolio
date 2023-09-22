@@ -4,11 +4,20 @@
 $font-family-default: 'Fira Code', monospace;
 
 // Font Size
-$font-size-xxs: 0.8125rem;
+$font-size-xxxs: 0.8125rem;
+$font-size-xxs: .875rem;
 $font-size-xs: 1rem;
+$font-size-x: 1.125rem;
 $font-size-sm: 1.25rem;
 $font-size-md: 1.5rem;
+$font-size-lg: 2rem;
+$font-size-xxl: 3rem;
+$font-size-xxxl: 3.5rem;
 $font-size-xxxxl: 3.875rem;
 
 // Line Height
+$line-height-sm: 1.25rem;
 $line-height-xxxxl: 3.875rem;
+
+// Font Weight
+$font-weight-regular: 400;

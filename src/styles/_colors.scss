@@ -1,20 +1,32 @@
 $color-primary-100: #01080E;
 
 $color-secondary-100: #607B96;
+$color-secondary-300: #4D5BCE;
 $color-secondary-400: #fff;
+$color-secondary-500: #e5e9f0;
 
 $color-accent-100: #fea55f;
+$color-accent-200: #43D9AD;
+$color-accent-300: #e99287;
+$color-accent-500: #237b6d;
 
 $color-line: #1E2D3D;
 $color-background: #011627;
 $color-nav-hovered: #1E2D3D74;
+$color-tag-console: #0091ff;
 
 :root {
-  --color-primary-100: #{$color-primary-100};
   --color-line: #{$color-line};
   --color-background: #{$color-background};
+  --color-primary-100: #{$color-primary-100};
   --color-secondary-100: #{$color-secondary-100};
-  --color-accent-100: #{$color-accent-100};
+  --color-secondary-300: #{$color-secondary-300};
   --color-secondary-400: #{$color-secondary-400};
+  --color-secondary-500: #{$color-secondary-500};
+  --color-accent-100: #{$color-accent-100};
+  --color-accent-200: #{$color-accent-200};
+  --color-accent-300: #{$color-accent-300};
+  --color-accent-500: #{$color-accent-500};
   --color-nav-hovered: #{$color-nav-hovered};
+  --color-tag-console: #{$color-tag-console};
 }

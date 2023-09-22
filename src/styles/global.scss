@@ -4,6 +4,20 @@
 
 * {
   user-select: none;
+
+  &::-webkit-scrollbar {
+    width: $space-xxs;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: solid 1px $color-line;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-secondary-100;
+  }
 }
 
 html {
