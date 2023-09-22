@@ -1,0 +1,42 @@
+@forward 'common.scss';
+@forward 'normalize';
+@use '/src/styles/main.scss' as *;
+
+* {
+  user-select: none;
+
+  &::-webkit-scrollbar {
+    width: $space-xxs;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-left: solid 1px $color-line;
+
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-secondary-100;
+  }
+}
+
+html {
+  background-color: $color-primary-100;
+  padding: $space-lg;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $color-background;
+  border: 1px solid $color-line;
+  border-radius: $space-xxxs;
+  height: 100%;
+}
+
+@include breakpoint(lg) {
+  html {
+    padding: $space-xs;
+  }
+}
