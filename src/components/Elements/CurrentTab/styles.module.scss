@@ -1,0 +1,31 @@
+@use '/src/styles/main.scss' as *;
+
+.container,
+.tab {
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  flex: 1;
+}
+
+.tab {
+  gap: $space-xxs;
+  font-size: $font-size-xxs;
+  line-height: $line-height-sm;
+  color: $color-secondary-400;
+  min-height: 2.1875rem;
+  padding: 0 $space-xxs;
+  border-right: 1px solid $color-line;
+  width: max-content;
+
+  & > i:first-child {
+    color: $color-accent-300;
+    font-size: $font-size-x;
+  }
+
+  & > i:last-child {
+    font-size: $font-size-sm;
+  }
+}
