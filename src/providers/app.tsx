@@ -8,10 +8,7 @@ type AppProviderProps = {
 
 const ErrorFallback = () => {
   return (
-    <div
-      className="text-red-500 w-screen h-screen flex flex-col justify-center items-center"
-      role="alert"
-    >
+    <div role="alert">
       <h2>Error</h2>
     </div>
   );
