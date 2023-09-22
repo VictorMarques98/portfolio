@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 const navLinks = [
@@ -30,14 +31,14 @@ const navLinks = [
 
 export const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const currentPath = "/";
+  const { pathname } = useLocation();
 
   return (
-    <header className={styles.header}>
-      <div className={styles.mobileMenu}>
+    <header className={styles.headerContainer}>
+      <div className={styles.mobileMenuContainer}>
         <a
           href="/"
-          className={styles.link}
+          className={styles.navLink}
         >
           victor-marques
         </a>
@@ -46,7 +47,7 @@ export const Header = () => {
           type="button"
           onClick={() => setOpenMenu(!openMenu)}
           className={[
-            styles.menuIcon,
+            styles.menuIconBtn,
             openMenu ? styles.open : '',
           ].join(' ')}
         >
@@ -55,24 +56,24 @@ export const Header = () => {
           <div />
         </button>
       </div>
-      <nav className={styles.nav}>
-        <ul
-          className={[
-            styles.list,
-            openMenu ? styles.open : '',
-          ].join(' ')}
-        >
+      <nav
+        className={[
+          styles.navContainer,
+          openMenu ? styles.open : '',
+        ].join(' ')}
+      >
+        <ul className={styles.navList}>
           {navLinks.map(link => (
             <li
               key={link.name}
-              className={styles.item}
+              className={styles.navItem}
             >
               {link.name &&
                 <a
                   href={link.path}
                   className={[
-                    styles.link,
-                    currentPath === link.path ? styles.active : '',
+                    styles.navLink,
+                    pathname === link.path ? styles.activeLink : '',
                   ].join(' ')}
                 >
                   {link.name}

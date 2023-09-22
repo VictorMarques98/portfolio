@@ -1,15 +1,21 @@
 @use '/src/styles/main.scss' as *;
 
-.header {
+.headerContainer {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
-.list {
+.mobileMenuContainer {
+  display: none;
+}
+
+.navList {
   display: flex;
 }
 
-.item {
+.navItem {
   border-bottom: 1px solid $color-line;
 
   &:not(:last-child) {
@@ -17,7 +23,8 @@
   }
 
   &:first-child {
-    flex: 0.4;
+    flex: 1;
+    max-width: 19.375rem;
   }
 
   &:nth-child(5) {
@@ -25,7 +32,7 @@
   }
 }
 
-.link {
+.navLink {
   display: block;
   padding: $space-xxs $space-md;
   font-size: $font-size-xxs;
@@ -35,7 +42,7 @@
   min-width: max-content;
   height: 100%;
 
-  &.active {
+  &.activeLink {
     border-bottom: 2px solid $color-accent-100;
     color: $color-secondary-400;
   }
@@ -46,11 +53,7 @@
   }
 }
 
-.mobileMenu {
-  display: none;
-}
-
-.menuIcon {
+.menuIconBtn {
   padding: 0 $space-md;
   width: 100%;
   background-color: transparent;
@@ -83,36 +86,62 @@
 
   &.open div:nth-child(2) {
     transform: rotate(45deg);
-    margin-top: -3px;
+    margin-top: -0.1875rem;
+  }
+}
+
+@include breakpoint(xxxxl) {
+  .navLink {
+    font-size: $font-size-xxxs;
+  }
+
+  .navItem {
+    &:first-child {
+      max-width: 17.1875rem;
+    }
   }
 }
 
 @include breakpoint(lg) {
-  .list {
+  .navContainer {
+    position: absolute;
+    background-color: $color-background;
+
+    &.open {
+      top: 100%;
+      width: 100%;
+
+      & .navList {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+
+  .navList {
     flex-direction: column;
     opacity: 0;
     transform: translateY(-100vh);
     transition: transform 0.3s ease-in-out;
-
-    &.open {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 
-  .item {
+  .navItem {
+    &:first-child {
+      max-width: 100%;
+    }
+
     &:not(:last-child) {
       border-right: 0;
     }
   }
 
-  .link {
+  .navLink {
     font-size: $font-size-xs;
     padding: $space-xs $space-md;
     min-width: auto;
   }
 
-  .mobileMenu {
+  .mobileMenuContainer {
     display: flex;
     align-items: center;
     justify-content: space-between;
