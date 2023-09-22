@@ -1,0 +1,41 @@
+@use '/src/styles/main.scss' as *;
+
+.container > div {
+  display: flex;
+  align-items: center;
+}
+
+.typewriter {
+  color: $color-secondary-300;
+  font-size: $font-size-lg;
+  line-height: 1;
+}
+
+.cursor {
+  background-color: $color-secondary-300;
+  color: $color-secondary-300;
+  height: $space-lg;
+  animation: blinker 0.9s steps(2, start) infinite;
+}
+
+@keyframes blinker {
+  to {
+    visibility: hidden;
+  }
+}
+
+@include breakpoint(sm) {
+  .typewriter {
+    font-size: $font-size-sm;
+  }
+
+  .cursor {
+    height: $space-md;
+  }
+}
+
+@include breakpoint(xs) {
+  .typewriter {
+    font-size: $font-size-xs;
+  }
+}
