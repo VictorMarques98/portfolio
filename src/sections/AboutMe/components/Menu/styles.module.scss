@@ -1,0 +1,113 @@
+@use '/src/styles/main.scss' as *;
+
+.menu {
+  display: flex;
+  border-right: 1px solid $color-line;
+  min-width: 310px;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.title {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: $color-secondary-400;
+  border-bottom: 1px solid $color-line;
+  min-height: 35px;
+  width: 100%;
+
+  & > i {
+    font-size: 28px;
+    margin: 0 2px;
+  }
+
+  &.active {
+    & > i {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.menuLinks {
+  overflow: hidden;
+  max-height: 0;
+
+  & > * {
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  &.active {
+    max-height: max-content;
+  }
+}
+
+.sublink,
+.subpath {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  font-size: 16px;
+  color: $color-secondary-100;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  margin: .5rem 0;
+
+  & > i:first-child {
+    margin: 0 6px;
+    font-size: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  & > i:nth-child(2) {
+    margin-right: 12px;
+    font-size: 18px
+  }
+
+  &.active,
+  &:hover {
+    & span {
+      color: $color-secondary-400;
+    }
+
+    & > i:first-child {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.subPaths {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.subpath {
+  margin-left: 32px;
+
+  & > i:first-child {
+   margin: 0;
+   margin-right: 8px;
+  }
+
+  &:hover,
+  &.active {
+    & > i:first-child {
+      transform: inherit;
+    }
+  }
+}
