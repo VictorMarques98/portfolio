@@ -2,12 +2,14 @@ import { ProfessionalInfoSub } from '@/sections/AboutMe/types'
 import styles from './styles.module.scss'
 
 interface CurrentTabProps {
-  tab: ProfessionalInfoSub | string
+  tab?: ProfessionalInfoSub | string
+  emptyTab?: boolean
 }
 
-export const CurrentTab = ({
-  tab,
-}: CurrentTabProps) => {
+export const CurrentTab = ({ tab, emptyTab }: CurrentTabProps) => {
+
+  if (emptyTab) return <div className={styles.emptyTab} />;
+
   return (
     <div className={styles.tab}>
       <i className="ri-code-line" />

@@ -10,6 +10,11 @@
   flex: 1;
 }
 
+.emptyTab {
+  min-height: 2.1875rem;
+  width: 100%;
+}
+
 .tab {
   gap: $space-xxs;
   font-size: $font-size-xxs;
