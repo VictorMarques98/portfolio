@@ -158,7 +158,7 @@ export const Menu = ({
     setCurrentPath(prev => ({
       main: prev.main === link ? '' : link,
       sub: paths.find((path) => path.main === link)?.sub[0].name || '',
-      content: paths.find((path) => path.main === link)?.sub[0]?.content[0]?.name || ''
+      content: paths.find((path) => path.main === link)?.sub[0].content[0].name ?? prev.content
     }));
   };
 
@@ -169,7 +169,7 @@ export const Menu = ({
     }));
   };
 
-  const handleContentClick = (content: string) => {
+  const handleContentClick = (content: ProfessionalInfoContent) => {
     setCurrentPath({ ...currentPath, content });
   };
 

@@ -2,7 +2,7 @@ import { Links } from '@/sections/AboutMe/types'
 import styles from './styles.module.scss'
 
 interface SideMenuProps {
-  currentLink: Links | ''
+  currentLink: Links | string
   onClick: (link: Links) => void
 }
 
