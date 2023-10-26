@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import styles from './styles.module.scss'
 
 const navLinks = [
@@ -15,10 +15,10 @@ const navLinks = [
     name: '_about-me',
     path: '/about-me',
   },
-  {
-    name: '_projects',
-    path: '/projects',
-  },
+  // {
+  //   name: '_ia',
+  //   path: '/ia',
+  // },
   {
     name: '',
     path: '',
@@ -36,12 +36,12 @@ export const Header = () => {
   return (
     <header className={styles.headerContainer}>
       <div className={styles.mobileMenuContainer}>
-        <a
-          href="/"
+        <Link
+          to="/"
           className={styles.navLink}
         >
           victor-marques
-        </a>
+        </Link>
         <button
           title="Menu"
           type="button"
@@ -69,15 +69,15 @@ export const Header = () => {
               className={styles.navItem}
             >
               {link.name &&
-                <a
-                  href={link.path}
+                <Link
+                  to={link.path}
                   className={[
                     styles.navLink,
                     pathname === link.path ? styles.activeLink : '',
                   ].join(' ')}
                 >
                   {link.name}
-                </a>
+                </Link>
               }
             </li>
           ))}

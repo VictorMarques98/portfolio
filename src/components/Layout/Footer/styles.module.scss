@@ -1,4 +1,4 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 .socialList {
   display: flex;
@@ -6,7 +6,7 @@
   border-top: 1px solid $color-line;
   height: $space-xxl;
 
-  & > li:nth-child(4) {
+  & > li:nth-child(3) {
     flex: 1;
   }
 }
@@ -60,7 +60,7 @@
   .socialList {
     height: 3.125rem;
 
-    & > li:nth-child(4) {
+    & > li:nth-child(3) {
       display: none;
     }
   }

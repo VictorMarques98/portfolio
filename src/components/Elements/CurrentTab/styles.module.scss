@@ -1,13 +1,8 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
-.container,
 .tab {
   display: flex;
   align-items: center;
-}
-
-.container {
-  flex: 1;
 }
 
 .emptyTab {
@@ -32,5 +27,12 @@
 
   & > i:last-child {
     font-size: $font-size-sm;
+  }
+}
+
+@include breakpoint(lg) {
+  .tab,
+  .emptyTab {
+    display: none;
   }
 }

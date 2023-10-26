@@ -1,4 +1,4 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 .container {
   display: flex;
@@ -9,4 +9,16 @@
   padding: 0 $space-xxs;
   font-size: $font-size-xs;
   color: $color-secondary-100;
+}
+
+@include breakpoint(xxxxl) {
+  .container {
+    font-size: $font-size-xxs;
+  }
+}
+
+@include breakpoint(lg) {
+  .container {
+    border-top: 0;
+  }
 }
