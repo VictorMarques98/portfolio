@@ -11,27 +11,21 @@ export const Footer = () => {
         </li>
         <li className={styles.socialItem}>
           <a
-            href="/"
+            href="https://www.linkedin.com/in/victormarquessantos/"
+            target="_blank"
+            rel="noopener noreferrer"
             className={styles.socialLink}
           >
-            <i className="ri-facebook-fill" />
-          </a>
-        </li>
-        <li className={styles.socialItem}>
-          <a
-            href="/"
-            className={styles.socialLink}
-          >
-            <i className="ri-twitter-fill" />
+            <i className="ri-linkedin-fill" />
           </a>
         </li>
         <li className={styles.socialItem}/>
         <li className={styles.socialItem}>
           <a
-            href="/"
+            href="https://github.com/VictorMarques98"
             className={styles.socialLink}
           >
-            <span>@username </span>
+            <span>@victormarques98 </span>
             <i className="ri-github-fill" />
           </a>
         </li>

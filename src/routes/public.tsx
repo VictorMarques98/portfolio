@@ -6,18 +6,14 @@ import { Footer } from '@/components/Layout/Footer'
 
 const { Home } = lazyImport(() => import("@/sections/Home/routes"), "Home");
 const { AboutMe } = lazyImport(() => import("@/sections/AboutMe/routes"), "AboutMe");
+// const { IA } = lazyImport(() => import("@/sections/IA/routes"), "IA");
 
 const App = () => {
   return (
     <>
       <Header />
       <Suspense
-        fallback={
-          <div>
-            {/* <Spinner size="xl" /> */}
-            loading
-          </div>
-        }
+        fallback={<div />}
       >
         <Outlet />
       </Suspense>
@@ -33,6 +29,7 @@ export const publicRoutes = [
     children: [
       { path: '/', element: <Home /> },
       { path: 'about-me', element: <AboutMe /> },
+      // { path: 'ia', element: <IA />},
       { path: '*', element: <Navigate to="." /> },
     ],
   },

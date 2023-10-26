@@ -20,8 +20,12 @@ const HeroSection = () => {
           <span>const </span>
           <span> githubLink </span>
           <span> = </span>
-          <a href="https://github.com/username">
-            "https://github.com/username"
+          <a
+            href="https://github.com/VictorMarques98"
+            target='_blank'
+            rel='noreferrer'
+          >
+            "https://github.com/VictorMarques98"
           </a>
         </p>
       </div>
@@ -42,7 +46,7 @@ export const Home = () => {
 
   return (
     <animated.main
-      className={styles.mainContainer }
+      className={styles.mainContainer}
       style={{ ...fadeIn }}
     >
       <HeroSection />

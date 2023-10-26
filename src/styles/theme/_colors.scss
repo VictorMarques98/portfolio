@@ -14,6 +14,8 @@ $color-line: #1E2D3D;
 $color-background: #011627;
 $color-nav-hovered: #1E2D3D74;
 $color-tag-console: #0091ff;
+$color-link-background: #1c2b3a;
+$color-link-hovered: #263b50;
 
 :root {
   --color-line: #{$color-line};
@@ -28,5 +30,7 @@ $color-tag-console: #0091ff;
   --color-accent-300: #{$color-accent-300};
   --color-accent-500: #{$color-accent-500};
   --color-nav-hovered: #{$color-nav-hovered};
+  --color-link-hovered: #{$color-link-hovered};
+  --color-link-background: #{$color-link-background};
   --color-tag-console: #{$color-tag-console};
 }

@@ -1,6 +1,6 @@
 @forward 'common.scss';
 @forward 'normalize';
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 * {
   user-select: none;
@@ -12,7 +12,6 @@
   &::-webkit-scrollbar-track {
     background: transparent;
     border-left: solid 1px $color-line;
-
   }
 
   &::-webkit-scrollbar-thumb {
