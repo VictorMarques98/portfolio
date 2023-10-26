@@ -1,0 +1,24 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid $color-line;
+  border-bottom: 1px solid $color-line;
+  min-height: 2.1875rem;
+  padding: 0 $space-xxs;
+  font-size: $font-size-xs;
+  color: $color-secondary-100;
+}
+
+@include breakpoint(xxxxl) {
+  .container {
+    font-size: $font-size-xxs;
+  }
+}
+
+@include breakpoint(lg) {
+  .container {
+    border-top: 0;
+  }
+}

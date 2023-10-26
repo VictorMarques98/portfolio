@@ -1,0 +1,6 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.container {
+  border: solid 1px red;
+  flex: 1;
+}

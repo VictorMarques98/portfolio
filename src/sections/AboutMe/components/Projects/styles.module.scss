@@ -1,0 +1,114 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.projectsList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+  padding: $space-xl;
+  width: 100%;
+  height: 100%;
+  max-height: calc(100% - 4.375rem);
+  overflow: auto;
+}
+
+.project > span {
+  display: block;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  color: $color-secondary-300;
+  margin-bottom: $space-xxs;
+}
+
+.projectCard {
+  background-color: $color-background;
+  border: 1px solid $color-line;
+  border-radius: $space-xs;
+  max-width: 37.5rem;
+}
+
+.window {
+  position: relative;
+  overflow: hidden;
+  max-height: 18.75rem;
+
+  & > img {
+    height: auto;
+    max-width: 100%;
+    border-top-left-radius: $space-xs;
+    border-top-right-radius: $space-xs;
+  }
+}
+
+.projectDescription {
+  border-top: 1px solid $color-line;
+  padding: $space-md;
+
+  & > p {
+    font-size: $font-size-xxs;
+    line-height: $line-height-sm;
+    color: $color-secondary-100;
+    margin-bottom: $space-md;
+  }
+
+  & > a {
+    background-color: $color-link-background;
+    color: $color-secondary-400;
+    font-size: $font-size-xxxxs;
+    line-height: $line-height-xxs;
+    padding: $space-xxxs $space-xs;
+    margin-right: $space-sm;
+    border-radius: $space-xxxs;
+    transition: all 0.1s ease-in-out;
+  }
+
+  & > a:hover {
+    background-color: $color-link-hovered;
+  }
+
+  & > a[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.tools {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 9%),
+    rgb(255 255 255 / 95%),
+    #ffffff
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 32px;
+  gap: 12px;
+  padding: 0 12px;
+
+  & [data-icon='react'] {
+    color: #61dbfb;
+  }
+
+  & [data-icon='typescript'] {
+    color: #2d79c7;
+  }
+
+  & [data-icon='sass'] {
+    color: #ce679a;
+  }
+
+  & [data-icon='jest'] {
+    color: #c21325;
+  }
+
+  & [data-icon='cypress'],
+  & [data-icon='nextjs'] {
+    color: #020202;
+  }
+}

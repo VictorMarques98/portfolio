@@ -1,0 +1,28 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: $space-md;
+
+  & > svg {
+    font-size: $space-xxxxxx * 3;
+    color: $color-secondary-300;
+  }
+
+  & > h1,
+  & > p {
+    color: $color-secondary-500;
+  }
+
+  & > h1 {
+    font-weight: $font-weight-bold;
+  }
+
+  & > p {
+    font-size: $font-size-xs;
+  }
+}

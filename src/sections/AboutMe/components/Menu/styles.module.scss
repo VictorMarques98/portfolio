@@ -1,0 +1,149 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.menu {
+  display: flex;
+  border-right: 1px solid $color-line;
+  min-width: 19.375rem;
+
+  & > div {
+    width: 100%;
+  }
+}
+
+.title {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-size: $font-size-xxs;
+  line-height: $line-height-sm;
+  color: $color-secondary-400;
+  border-bottom: 1px solid $color-line;
+  min-height: 2.1875rem;
+  width: 100%;
+
+  & > i {
+    font-size: 1.75rem;
+    margin: 0 0.125rem;
+  }
+
+  &.active > i {
+    transform: rotate(90deg);
+  }
+}
+
+.menuLinks {
+  overflow: hidden;
+  max-height: 0;
+
+  & > * {
+    width: 100%;
+    margin: $space-xxxs 0;
+  }
+
+  &.active {
+    max-height: max-content;
+  }
+}
+
+.sublink,
+.subpath {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  padding: 0;
+  font-size: $font-size-xs;
+  color: $color-secondary-100;
+  transition: all 0.3s ease-in-out;
+  margin: $space-xxxs 0;
+
+  & > i:first-child {
+    margin: 0 0.375rem;
+    font-size: $font-size-sm;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  & > i:nth-child(2) {
+    margin-right: $space-xxs;
+    font-size: $font-size-x;
+  }
+
+  &.active {
+    & span {
+      color: $color-secondary-400;
+    }
+
+    & > i:first-child {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:hover {
+    & span {
+      color: $color-secondary-400;
+    }
+  }
+}
+
+.subPaths {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.subpath {
+  margin-left: $space-lg;
+
+  & > i:first-child {
+    margin: 0 $space-xxxs 0;
+  }
+
+  &:hover,
+  &.active {
+    & > i:first-child {
+      transform: inherit;
+    }
+  }
+}
+
+@include breakpoint(xxxxl) {
+  .menu {
+    min-width: 17.1875rem;
+    max-width: 17.1875rem;
+  }
+
+  .sublink,
+  .subpath {
+    font-size: $font-size-xxs;
+  }
+
+  .subpath {
+    margin-left: $space-md;
+  }
+}
+
+@include breakpoint(lg) {
+  .menu {
+    max-width: 100%;
+    min-width: 100%;
+  }
+
+  .title {
+    background-color: $color-line;
+    padding: 0 $space-xxs;
+    margin-bottom: $space-xxxxs;
+  }
+
+  .sublink,
+  .subpath {
+    font-size: inherit;
+  }
+}

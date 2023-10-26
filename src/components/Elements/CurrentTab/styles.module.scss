@@ -1,0 +1,38 @@
+@use '/src/styles/theme/main.scss' as *;
+
+.tab {
+  display: flex;
+  align-items: center;
+}
+
+.emptyTab {
+  min-height: 2.1875rem;
+  width: 100%;
+}
+
+.tab {
+  gap: $space-xxs;
+  font-size: $font-size-xxs;
+  line-height: $line-height-sm;
+  color: $color-secondary-400;
+  min-height: 2.1875rem;
+  padding: 0 $space-xxs;
+  border-right: 1px solid $color-line;
+  width: max-content;
+
+  & > i:first-child {
+    color: $color-accent-300;
+    font-size: $font-size-x;
+  }
+
+  & > i:last-child {
+    font-size: $font-size-sm;
+  }
+}
+
+@include breakpoint(lg) {
+  .tab,
+  .emptyTab {
+    display: none;
+  }
+}
