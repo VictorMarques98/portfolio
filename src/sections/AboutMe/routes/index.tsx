@@ -16,8 +16,9 @@ export const AboutMe = () => {
   const [currentPath, setCurrentPath] = useState<CurrentPathState>({
     main: 'professional-info',
     sub: 'experience',
-    content: 'inklua-2023'
+    content: 'front-end-inklua'
   });
+  const showProjects = currentPath.sub !== 'skills';
 
   const fadeIn = useSpring({
     from: { opacity: 0 },
@@ -37,18 +38,26 @@ export const AboutMe = () => {
         <section className={styles.leftSection}>
           <CurrentTab tab={currentPath.content} />
           <CurrentPath path={currentPath} />
-          <Console content={currentPath.content} />
-        </section>
-        <section className={styles.rightSection}>
-          <CurrentTab emptyTab />
-          <CurrentPath
-            path={{
-              ...currentPath,
-              content: `${currentPath.content}.html > projects`
-            }}
+          <Console
+            content={currentPath.content}
+            key={currentPath.content}
           />
-          <Projects content={currentPath.content} />
         </section>
+        {showProjects &&
+          <section className={styles.rightSection}>
+            <CurrentTab emptyTab />
+            <CurrentPath
+              path={{
+                ...currentPath,
+                content: `${currentPath.content}.html > projects`
+              }}
+            />
+            <Projects
+              key={currentPath.content}
+              content={currentPath.content}
+            />
+          </section>
+        }
       </div>
     </animated.main>
   )

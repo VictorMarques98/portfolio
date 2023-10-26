@@ -1,4 +1,4 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 .container,
 .numberLines,
@@ -32,4 +32,28 @@
 
 .tag {
   color: $color-tag-console;
+}
+
+@include breakpoint(xxxxl) {
+  .numberLines span,
+  .content {
+    font-size: $font-size-xxs;
+  }
+}
+
+@include breakpoint(lg) {
+  .numberLines span,
+  .content {
+    font-size: $font-size-xs;
+  }
+
+  .container {
+    gap: $space-xs;
+    min-height: 100%;
+    max-height: 100%;
+  }
+
+  .numberLines {
+    min-width: $space-lg;
+  }
 }

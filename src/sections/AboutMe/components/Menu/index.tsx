@@ -1,10 +1,10 @@
 import { Fragment } from 'react'
 import { SideMenu } from '@/sections/AboutMe/components/Menu/SideMenu'
-import { 
-  CurrentPathState, 
-  Links, 
-  ProfessionalInfoContent, 
-  ProfessionalInfoSub 
+import {
+  CurrentPathState,
+  Links,
+  ProfessionalInfoContent,
+  ProfessionalInfoSub
 } from '@/sections/AboutMe/types'
 import styles from './styles.module.scss'
 
@@ -32,122 +32,105 @@ const paths: Paths[] = [
         name: 'experience',
         color: 'var(--color-accent-300)',
         content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
+          { name: 'front-end-inklua' },
+          { name: 'front-end-foxbit' },
+          { name: 'front-end-cluster' },
         ]
       },
       {
-        name: 'hard-skills',
+        name: 'skills',
         color: 'var(--color-accent-200)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2021',
-          }
-        ]
+        content: [{ name: 'index.tsx' }]
       },
-      {
-        name: 'soft-skills',
-        color: 'var(--color-secondary-300)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
-        ]
-      }
+      // {
+      //   name: 'soft-skills',
+      //   color: 'var(--color-secondary-300)',
+      //   content: [{ name: 'index.tsx' }]
+      // }
     ],
   },
-  {
-    main: 'personal-info',
-    sub: [
-      {
-        name: 'experience',
-        color: 'var(--color-accent-300)',
-        content: [
-          {
-            name: 'inklua-2021'
-          },
-          {
-            name: 'inklua-2023'
-          }
-        ]
-      },
-      {
-        name: 'hard-skills',
-        color: 'var(--color-accent-200)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
-        ]
-      },
-      {
-        name: 'soft-skills',
-        color: 'var(--color-secondary-300)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
-        ]
-      }
-    ],
-  },
-  {
-    main: 'hobbies',
-    sub: [
-      {
-        name: 'experience',
-        color: 'var(--color-accent-300)',
-        content: [
-          {
-            name: 'inklua-2023'
-          },
-          {
-            name: 'inklua-2022'
-          }
-        ]
-      },
-      {
-        name: 'hard-skills',
-        color: 'var(--color-accent-200)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
-        ]
-      },
-      {
-        name: 'soft-skills',
-        color: 'var(--color-secondary-300)',
-        content: [
-          {
-            name: 'inklua-2023',
-          },
-          {
-            name: 'inklua-2022',
-          }
-        ]
-      }
-    ],
-  }
+  // {
+  //   main: 'personal-info',
+  //   sub: [
+  //     {
+  //       name: 'experience',
+  //       color: 'var(--color-accent-300)',
+  //       content: [
+  //         {
+  //           name: 'inklua-2021'
+  //         },
+  //         {
+  //           name: 'front-end-inklua'
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       name: 'hard-skills',
+  //       color: 'var(--color-accent-200)',
+  //       content: [
+  //         {
+  //           name: 'front-end-inklua',
+  //         },
+  //         {
+  //           name: 'inklua-2022',
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       name: 'soft-skills',
+  //       color: 'var(--color-secondary-300)',
+  //       content: [
+  //         {
+  //           name: 'front-end-inklua',
+  //         },
+  //         {
+  //           name: 'inklua-2022',
+  //         }
+  //       ]
+  //     }
+  //   ],
+  // },
+  // {
+  //   main: 'hobbies',
+  //   sub: [
+  //     {
+  //       name: 'experience',
+  //       color: 'var(--color-accent-300)',
+  //       content: [
+  //         {
+  //           name: 'front-end-inklua'
+  //         },
+  //         {
+  //           name: 'inklua-2022'
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       name: 'hard-skills',
+  //       color: 'var(--color-accent-200)',
+  //       content: [
+  //         {
+  //           name: 'front-end-inklua',
+  //         },
+  //         {
+  //           name: 'inklua-2022',
+  //         }
+  //       ]
+  //     },
+  //     {
+  //       name: 'soft-skills',
+  //       color: 'var(--color-secondary-300)',
+  //       content: [
+  //         {
+  //           name: 'front-end-inklua',
+  //         },
+  //         {
+  //           name: 'inklua-2022',
+  //         }
+  //       ]
+  //     }
+  //   ],
+  // }
 ];
 
 export const Menu = ({
@@ -199,7 +182,7 @@ export const Menu = ({
               ].join(' ')}
             >
               {sub.map(({ color, content, name }) => (
-                <li>
+                <li key={name}>
                   <button
                     type='button'
                     onClick={() => handleSubLinkClick(name)}
@@ -222,7 +205,7 @@ export const Menu = ({
                     ].join(' ')}
                   >
                     {content.map(subPath => (
-                      <li>
+                      <li key={subPath.name}>
                         <button
                           type='button'
                           onClick={() => handleContentClick(subPath.name)}

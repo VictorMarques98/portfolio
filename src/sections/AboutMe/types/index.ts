@@ -1,8 +1,8 @@
 export type Links = 'professional-info' | 'personal-info' | 'hobbies';
 
-export type ProfessionalInfoSub = 'experience' | 'hard-skills' | 'soft-skills';
+export type ProfessionalInfoSub = 'experience' | 'skills' | 'soft-skills';
 
-export type ProfessionalInfoContent = 'inklua-2023' | 'inklua-2022' | 'inklua-2021';
+export type ProfessionalInfoContent = 'front-end-inklua' | 'front-end-foxbit' | 'front-end-cluster' | 'index.tsx'
 
 export interface CurrentPathState {
   main: Links | string

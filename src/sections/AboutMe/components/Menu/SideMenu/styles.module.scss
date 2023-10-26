@@ -1,4 +1,4 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 .sideMenu {
   border-right: 1px solid $color-line;
@@ -18,17 +18,23 @@
   width: 100%;
   padding: 0;
 
-  &>i {
+  & > i {
     color: $color-secondary-100;
     font-size: $font-size-md;
-    opacity: .4;
-    transition: opacity .2s ease-in-out;
+    opacity: 0.4;
+    transition: opacity 0.2s ease-in-out;
   }
 
   &.active,
   &:hover {
-    &>i {
+    & > i {
       opacity: 1;
     }
+  }
+}
+
+@include breakpoint(lg) {
+  .sideMenu {
+    display: none;
   }
 }

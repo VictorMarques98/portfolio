@@ -33,7 +33,7 @@ export const SideMenu = ({
   return (
     <ul className={styles.sideMenu}>
       {sideMenuItems.map(({icon, name}) => (
-        <li className={styles.item}>
+        <li key={name} className={styles.item}>
           <button
             type='button'
             onClick={() => onClick(name)}

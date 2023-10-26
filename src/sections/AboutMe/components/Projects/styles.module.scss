@@ -1,4 +1,4 @@
-@use '/src/styles/main.scss' as *;
+@use '/src/styles/theme/main.scss' as *;
 
 .projectsList {
   display: flex;
@@ -28,8 +28,8 @@
 
 .window {
   position: relative;
-  max-height: 7.5rem;
   overflow: hidden;
+  max-height: 18.75rem;
 
   & > img {
     height: auto;
@@ -58,9 +58,57 @@
     padding: $space-xxxs $space-xs;
     margin-right: $space-sm;
     border-radius: $space-xxxs;
+    transition: all 0.1s ease-in-out;
   }
 
   & > a:hover {
     background-color: $color-link-hovered;
+  }
+
+  & > a[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
+
+.tools {
+  position: absolute;
+  height: 60px;
+  width: 100%;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 9%),
+    rgb(255 255 255 / 95%),
+    #ffffff
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 32px;
+  gap: 12px;
+  padding: 0 12px;
+
+  & [data-icon='react'] {
+    color: #61dbfb;
+  }
+
+  & [data-icon='typescript'] {
+    color: #2d79c7;
+  }
+
+  & [data-icon='sass'] {
+    color: #ce679a;
+  }
+
+  & [data-icon='jest'] {
+    color: #c21325;
+  }
+
+  & [data-icon='cypress'],
+  & [data-icon='nextjs'] {
+    color: #020202;
   }
 }

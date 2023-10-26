@@ -1,98 +1,32 @@
-import { ProfessionalInfoContent } from '@/sections/AboutMe/types'
 import { useSprings, animated } from '@react-spring/web'
+import { projects } from './constants'
+import { 
+  IconReact, 
+  IconLanguageTypescript,
+  IconCypress,
+  IconJest,
+  IconNextjs,
+  IconSass
+} from '../../styles/icons'
 import styles from './styles.module.scss'
 
 interface ProjectsProps {
-  content: ProfessionalInfoContent
+  content: keyof typeof projects
 }
 
-const projects = {
-  'inklua-2023': [
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-      projectLink: 'httos://google.com',
-      codeLink: 'httos://google.com',
-    },
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    }
-  ],
-  'inklua-2022': [
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    }
-  ],
-  'inklua-2021': [
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2023',
-      description: 'A new version of Inklua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    },
-    {
-      name: 'Inklua 2020',
-      description: 'A new version of Inkasdasdlua, a programming language for the game engine LÖVE.A new version of Inklua, a programming language for the game engine LÖVE.',
-      url: '',
-      imageUrl: 'https://developer-portfolio-v2.netlify.app/images/projects/ui-animations2.png',
-    }
-  ],
+const tools = {
+  react: <IconReact data-icon="react" />,
+  typescript: <IconLanguageTypescript data-icon="typescript" />,
+  cypress: <IconCypress data-icon="cypress" />,
+  jest: <IconJest data-icon="jest" />,
+  nextjs: <IconNextjs data-icon="nextjs" />,
+  sass: <IconSass data-icon="sass" />
 };
 
 export const Projects = ({ content }: ProjectsProps) => {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [springs, _] = useSprings(
-    projects[content].length,
+  const project = projects[content];
+  const [springs] = useSprings(
+    project?.length ?? 0,
     (index) => ({
       from: { y: 100, opacity: 0 },
       to: { y: 0, opacity: 1 },
@@ -107,29 +41,33 @@ export const Projects = ({ content }: ProjectsProps) => {
           style={props}
           className={styles.project}
         >
-          <span>{projects[content][index].name}</span>
+          <span>{project[index].name}</span>
           <div className={styles.projectCard}>
             <div className={styles.window}>
               <img
-                src={projects[content][index].imageUrl}
-                alt={projects[content][index].name}
+                src={project[index].imageUrl}
+                alt={project[index].name}
               />
+              <div className={styles.tools}>
+                {project[index].tools.map(tool => tools[tool as keyof typeof tools])}
+              </div>
             </div>
             <div className={styles.projectDescription}>
               <p>
-                {projects[content][index].description}
+                {project[index].description}
               </p>
               <a
-                href={projects[content][index].projectLink}
+                href={project[index].url}
                 target="_blank"
                 rel="noreferrer"
               >
                 view-project
               </a>
               <a
-                href={projects[content][index].codeLink}
+                href=""
                 target="_blank"
                 rel="noreferrer"
+                aria-disabled={true}
               >
                 view-code
               </a>
