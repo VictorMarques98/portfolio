@@ -2,13 +2,11 @@ import TypewriterCP from 'typewriter-effect'
 import styles from './styles.module.scss'
 
 const typeContent = [
-  '> Front End Developer',
+  '> Front-End Developer',
   '> ReactJS',
-  '> React Native',
-  '> NodeJS',
   '> Typescript',
   '> Javascript',
-  '> HTML',
+  '> HTML5 / CSS3',
 ];
 
 export const Typewriter = () => {
