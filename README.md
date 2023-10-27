@@ -1,27 +1,67 @@
-# React + TypeScript + Vite
+# React Terminal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React Terminal Portfolio](https://your-portfolio-url.com/assets/terminal-portfolio-screenshot.png)
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is my personal portfolio website, designed as a terminal-like interface, inspired by [this project](https://www.figma.com/file/YwnwJxWgD5nK75dXwmFQDK/Portfolio-for-Developers-(Copy)?type=design&node-id=0-1&mode=design). It is built using React, ViteJS, Sass, and various other libraries to showcase my skills and projects.
 
-## Expanding the ESLint configuration
+Visit the live portfolio: [Your Portfolio URL](https://your-portfolio-url.com)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- **Terminal-Style UI**: The portfolio emulates a terminal interface, providing a unique and interactive user experience.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- **Project Showcase**: Display your projects with detailed information, including titles, descriptions, technologies used, and links to the project repositories and live demos.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- **Interactive Commands**: Users can interact with the terminal by typing commands like `about`, `projects`, and `contact` to access different sections of the portfolio.
+
+- **Responsive Design**: The portfolio is responsive, ensuring a seamless experience across various devices and screen sizes.
+
+## Technologies Used
+
+- **React**: Building the user interface and handling the application's state.
+
+- **ViteJS**: For a fast and efficient development environment with modern JavaScript features.
+
+- **Sass**: Styling the components and providing easy-to-maintain stylesheets.
+
+## Setup
+
+1. **Clone the Repository**:
+
+   ```bash
+   git clone https://github.com/VictorMarques98/portfolio
+   cd portfolio
+   ```
+
+2. **Install Dependencies**:
+
+   ```bash
+   yarn add
+   ```
+
+3. **Start Development Server**:
+
+   ```bash
+   yarn dev
+   ```
+
+4. **Open in Your Browser**:
+
+   Your portfolio will be running at `http://localhost:3000`.
+
+## Usage
+
+Once the development server is running, you can access your portfolio by opening a web browser and navigating to `http://localhost:3000`.
+
+Feel free to customize the content and design of your portfolio to match your preferences and showcase your unique skills and personality.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- GitHub: [VictorMarques98](https://github.com/VictorMarques98)
+- Email: [victormonreal98@gmail.com](mailto:victormonreal98@gmail.com)
