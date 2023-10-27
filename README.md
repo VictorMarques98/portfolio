@@ -1,6 +1,6 @@
 # React Terminal Portfolio
 
-![React Terminal Portfolio](https://your-portfolio-url.com/assets/terminal-portfolio-screenshot.png)
+![React Terminal Portfolio](https://github.com/VictorMarques98/portfolio/assets/61996122/94841970-6c43-4b55-9687-0012be327717)
 
 ## Overview
 
