@@ -1,6 +1,6 @@
 # React Terminal Portfolio
 
-![React Terminal Portfolio](https://github.com/VictorMarques98/portfolio/assets/61996122/94841970-6c43-4b55-9687-0012be327717)
+![React Terminal Portfolio](https://github.com/VictorMarques98/portfolio/assets/61996122/94841970-6c43-4b55-9687-0012be327717](https://github.com/VictorMarques98/portfolio/assets/61996122/7cd2f11b-5e48-4b0c-84ea-53636d8d98bc)
 
 ## Overview
 
