@@ -6,7 +6,7 @@
 
 This is my personal portfolio website, designed as a terminal-like interface, inspired by [this project](https://www.figma.com/file/YwnwJxWgD5nK75dXwmFQDK/Portfolio-for-Developers-(Copy)?type=design&node-id=0-1&mode=design). It is built using React, ViteJS, Sass, and various other libraries to showcase my skills and projects.
 
-Visit the live portfolio: [Your Portfolio URL](https://your-portfolio-url.com)
+Visit the live portfolio: [Your Portfolio URL]([https://your-portfolio-url.com](https://victormarques98.github.io/))
 
 ## Features
 
